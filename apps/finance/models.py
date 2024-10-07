@@ -37,6 +37,7 @@ class Invoice(models.Model):
             total += item.amount
         return total
 
+    # total amount
     def total_amount_payable(self):
         return self.balance_from_previous_term + self.amount_payable()
 
