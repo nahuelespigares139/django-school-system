@@ -32,6 +32,7 @@ class Invoice(models.Model):
     def amount_payable(self):
         items = InvoiceItem.objects.filter(invoice=self)
         total = 0
+        # calculate total invoice
         for item in items:
             total += item.amount
         return total
