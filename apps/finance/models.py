@@ -41,6 +41,7 @@ class Invoice(models.Model):
     def total_amount_payable(self):
         return self.balance_from_previous_term + self.amount_payable()
 
+    # total get paid amount
     def total_amount_paid(self):
         receipts = Receipt.objects.filter(invoice=self)
         amount = 0
